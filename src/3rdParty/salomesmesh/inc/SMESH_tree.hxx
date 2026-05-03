@@ -23,7 +23,7 @@
 //  SMESH SMESH_Tree : tree implementation
 //  File      : SMESH_Tree.hxx
 //  Created   : Tue Jan 16 16:00:00 2007
-//  Author    : Nicolas Geimer & AurÃ©lien Motteux (OCC)
+//  Author    : Nicolas Geimer & Aurélien Motteux (OCC)
 //  Module    : SMESH
 //
 #ifndef _SMESH_Tree_HXX_

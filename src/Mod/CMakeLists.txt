@@ -22,6 +22,10 @@ if(BUILD_DRAFT)
   add_subdirectory(Draft)
 endif(BUILD_DRAFT)
 
+if(BUILD_EQUIP)
+  add_subdirectory(Equip)
+endif(BUILD_EQUIP)
+
 if(BUILD_FEM)
     add_subdirectory(Fem)
 endif(BUILD_FEM)

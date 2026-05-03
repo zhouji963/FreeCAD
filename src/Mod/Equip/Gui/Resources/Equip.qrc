@@ -1,0 +1,9 @@
+<RCC>
+    <qresource>
+        <file>icons/EquipElement_CylinderShell.svg</file>   
+        <file>icons/EquipElement_SphericalHead.svg</file>   
+        <file>icons/EquipWorkbench.svg</file>
+        <file>icons/EquipShow.svg</file>
+    </qresource>
+</RCC>
+

@@ -146,13 +146,14 @@ if(BUILD_GUI)
         target_compile_warn_error(FreeCADGuiPy)
     endif()
 
-    SET_BIN_DIR(FreeCADGuiPy FreeCADGui)
+    SET_BIN_DIR(FreeCADGuiPy FreeCADGuiPy)
     SET_PYTHON_PREFIX_SUFFIX(FreeCADGuiPy)
     if(WIN32)
         # Name clash with target "FreeCADGui"
         # Must be called "FreeCADGuiPy_d" and "FreeCADGuiPy" to work so override default
         set_target_properties(FreeCADGuiPy PROPERTIES PDB_NAME_DEBUG "FreeCADGuiPy_d")
         set_target_properties(FreeCADGuiPy PROPERTIES PDB_NAME_RELEASE "FreeCADGuiPy")
+        set_target_properties(FreeCADGuiPy PROPERTIES PDB_NAME_RELWITHDEBINFO "FreeCADGuiPy")        
     endif(WIN32)
 
     if(WIN32)

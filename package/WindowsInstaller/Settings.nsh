@@ -12,9 +12,17 @@ These typically need to be modified for each FreeCAD release
 # comment this or use /DFC_TEST_BUILD command line option for testing builds since it will reduce
 # the time to create an installer a lot at the cost of a much greater file size.
 # So assure it is active for release builds!
+/*
 !ifndef FC_TEST_BUILD
     SetCompressor /SOLID lzma
 !endif
+*/
+!ifdef DFC_RELEASE_BUILD
+    SetCompressor /FINAL /SOLID lzma  ; DFC_RELEASE_BUILD: /SOLID lzma
+!else
+    SetCompressor /FINAL lzma         ; Default: lzma
+!endif
+SetCompress auto
 
 #--------------------------------
 # File locations

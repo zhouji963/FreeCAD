@@ -2,11 +2,12 @@
   # NSIS language file
   !insertmacro MUI_LANGUAGE "${LANG_NAME}"
   # FreeCAD language file
-  !insertmacro LANGFILE_INCLUDE_WITHDEFAULT "lang\${LANG_NAME}.nsh" "lang\english.nsh"
+  !insertmacro LANGFILE_INCLUDE_WITHDEFAULT "lang\${LANG_NAME}.nsh" "lang\SimpChinese.nsh"
 !macroend
 
 # list of all languages the installer is translated to
-!insertmacro LANG "english" # first language is the default
+!insertmacro LANG "SimpChinese" # first language is the default
+!insertmacro LANG "english"
 !insertmacro LANG "arabic"
 !insertmacro LANG "basque"
 !insertmacro LANG "catalan"

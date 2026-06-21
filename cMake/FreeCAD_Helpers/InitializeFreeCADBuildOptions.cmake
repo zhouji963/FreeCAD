@@ -148,11 +148,7 @@ macro(InitializeFreeCADBuildOptions)
     option(BUILD_ADDONMGR "Build the FreeCAD addon manager module" ON)
     option(BUILD_BIM "Build the FreeCAD BIM module" ON)
     option(BUILD_DRAFT "Build the FreeCAD draft module" ON)
-<<<<<<< HEAD
-    option(BUILD_DRAWING "Build the FreeCAD drawing module" OFF)
     option(BUILD_EQUIP "Build the FreeCAD EQUIP module" ON)
-=======
->>>>>>> main
     option(BUILD_HELP "Build the FreeCAD help module" ON)
     option(BUILD_IMPORT "Build the FreeCAD import module" ON)
     option(BUILD_INSPECTION "Build the FreeCAD inspection module" ON)

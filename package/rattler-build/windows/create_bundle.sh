@@ -127,6 +127,12 @@ else
   echo "Not logged into Azure -- skipping signing."
 fi
 
+echo "Running FreeCAD command-line smoke test..."
+if ! "$SIGN_DIR/bin/freecadcmd.exe" --safe-mode --version; then
+  echo "FreeCAD command-line smoke test failed; the Windows bundle cannot start."
+  exit 1
+fi
+
 7z a -t7z -mx9 -mmt=${NUMBER_OF_PROCESSORS} ${version_name}.7z ${version_name} -bb
 # create hash
 sha256sum ${version_name}.7z > ${version_name}.7z-SHA256.txt
@@ -134,7 +140,7 @@ sha256sum ${version_name}.7z > ${version_name}.7z-SHA256.txt
 if [ "${MAKE_INSTALLER}" == "true" ]; then
     FILES_FREECAD="$(cygpath -w $(pwd))\\${version_name}"
     nsis_cpdir=$(pwd)/.nsis_tmp
-    cp -r "${NSIS_INSTALL}" "${nsis_cpdir}"
+    cp -r "${CONDA_PREFIX}/NSIS" "${nsis_cpdir}"
     # curl -L -o ".nsis-log.zip" http://prdownloads.sourceforge.net/nsis/nsis-3.11-log.zip # we use the log variant of the package already
     # curl -L -o ".nsis-strlen_8192.zip" "http://prdownloads.sourceforge.net/nsis/nsis-3.11-strlen_8192.zip"
     curl -L -o ".NsProcess.7z" "https://nsis.sourceforge.io/mediawiki/images/1/18/NsProcess.zip"
